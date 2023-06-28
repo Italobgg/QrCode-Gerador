@@ -1,11 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+
     <title>Qrcode-Gerador</title>
 </head>
+
 <body>
-    
+
+    <section>
+        <div class="row">
+            <input type="color" class="light" value="#fff">
+            <input type="color" class="dark">
+            <select class="sizes">
+                <option value="100">100x100</option>
+                <option value="00">200x200</option>
+                <option value="00">300x300</option>
+                <option value="00">400x400</option>
+                <option value="00">500x500</option>
+                <option value="00">600x600</option>
+                <option value="00">700x700</option>
+                <option value="00">800x800</option>
+                <option value="00">900x900</option>
+                <option value="00">1000x1000</option>
+            </select>
+        </div>
+
+        <input type="text" class="qr-text" placeholder="Seu texto aqui">
+        <div id="qr-code"></div>
+        <div class="action-container">
+            <a href="#" class="download btn" download="QRcode">
+                <span>Baixar</span>
+                <span class="icon bi bi-download"></span>
+            </a>
+
+            <button class="share-btn btn">
+                <span>Compartilhar</span>
+                <span class=" icon bi bi-share"></span>
+            </button>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

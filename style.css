@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+}
+
+:root {
+    --bgBody: #31133f;
+    --bgInput: #1e0d25;
+    --border: #6b6f98;
+    --borderPlace: #6b73ca;
+    --btn: #646fe9;
+    --text: #fff;
+}
+
+body {
+    background-color: var(--bgBody);
+    font-family: 'Oswald', sans-serif;
+    max-width: 500px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+}
+
+input[type="color"] {
+    border: none;
+    width: 32.5%;
+    height: 40px;
+    border-radius: 3px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+.qr-text {
+    width: 100%;
+    padding: 1rem;
+    display: block;
+    background: var(--bgInput);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin: 0.5rem 0 1rem 0;
+    color: var(--text);
+    outline: none;
+}
+
+.qr-text::placeholder {
+    color: var(--borderPlace);
+    font-weight: 500;
+}
+
+#qr-code {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--borderPlace);
+}
+
+#qr-code img,
+#qr-code canvas {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sizes {
+    width: 32.5%;
+    height: 40px;
+    color: var(--text);
+    background: var(--bgInput);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    outline: none;
+}
+
+.btn {
+    color: var(--text);
+    max-width: 200px;
+    padding: 14px;
+    background: var(--btn);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+.icon {
+    width: 20px;
+    margin-left: 10px;
+}
+
+.share-btn {
+    margin-left: 0.7rem;
+}
+
+.action-container {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: center;
+}
+
+@media (max-width: 512px) {
+    body {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    #qr-code {
+        width: 95vw;
+        height: 95vw;
+    }
+
+    .btn {
+        min-width: unset;
+    }
+}
+
+@media (max-width: 350px) {
+    .action-container {
+        flex-direction: column;
+    }
+
+    .share-btn {
+        margin-left: 0;
+        margin-top: 0.7rem;
+    }
+}
