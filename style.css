@@ -4,20 +4,20 @@
     box-sizing: border-box;
     text-decoration: none;
     border: none;
+    font-family: 'Oswald', sans-serif;
 }
 
 :root {
-    --bgBody: #31133f;
+    --bgBody: #1b0d22;
     --bgInput: #1e0d25;
     --border: #6b6f98;
     --borderPlace: #6b73ca;
     --btn: #646fe9;
-    --text: #fff;
+    --text: #fef2f2;
 }
 
 body {
     background-color: var(--bgBody);
-    font-family: 'Oswald', sans-serif;
     max-width: 500px;
     height: 100vh;
     margin: 0 auto;
@@ -40,6 +40,28 @@ input[type="color"]::-webkit-color-swatch {
 
 input[type="color"]::-webkit-color-swatch-wrapper {
     padding: 0;
+}
+
+.tittle {
+    width: 100%;
+    color: var(--text);
+
+}
+
+.tittle h1{
+    font-size: 2em;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 0;
+}
+
+.tittle span{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 10px;
+
 }
 
 .qr-text {
@@ -120,28 +142,31 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     justify-content: center;
 }
 
-@media (max-width: 512px) {
-    body {
+
+
+@media (max-width: 512px){
+    body{
         max-width: 100%;
         padding: 10px;
     }
-
-    #qr-code {
+    #qr-code{
         width: 95vw;
         height: 95vw;
     }
-
-    .btn {
+    #qr-code img, #qr-code canvas{
+        max-width: 95vw !important;
+        max-height: 95vw !important;
+    }
+    .btn{
         min-width: unset;
     }
 }
 
-@media (max-width: 350px) {
-    .action-container {
+@media (max-width: 350px){
+    .action-container{
         flex-direction: column;
     }
-
-    .share-btn {
+    .share-btn{
         margin-left: 0;
         margin-top: 0.7rem;
     }
