@@ -9,11 +9,23 @@
 
 :root {
     --bgBody: #1b0d22;
-    --bgInput: #1e0d25;
+    --bgInput: #b0b4e1;
     --border: #6b6f98;
     --borderPlace: #6b73ca;
     --btn: #646fe9;
     --text: #fef2f2;
+    --theme: #EEE9DA;
+
+}
+
+[data-theme="light"] {
+    --bgBody: #EEE9DA;
+    --bgInput: #BDCDD6;
+    --border: #6096B4;
+    --borderPlace: #6096B4;
+    --btn: #BDCDD6;
+    --text: #464343;
+    --theme: #1b0d22;
 }
 
 body {
@@ -25,6 +37,7 @@ body {
     align-items: center;
     justify-content: center;
     color: var(--text);
+    transition: background-color 2s;
 }
 
 input[type="color"] {
@@ -48,7 +61,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 
 }
 
-.tittle h1{
+.tittle h1 {
     font-size: 2em;
     align-items: center;
     justify-content: center;
@@ -56,7 +69,7 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     margin-bottom: 0;
 }
 
-.tittle span{
+.tittle span {
     align-items: center;
     justify-content: center;
     display: flex;
@@ -142,31 +155,45 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     justify-content: center;
 }
 
+.theme-toggle {
+    display: none;
+}
 
+.theme-label {
+    cursor: pointer;
+    margin-left: 0.5rem;
+    font-size: 35px;
+    color: var(--theme);
+}
 
-@media (max-width: 512px){
-    body{
+@media (max-width: 512px) {
+    body {
         max-width: 100%;
         padding: 10px;
     }
-    #qr-code{
+
+    #qr-code {
         width: 95vw;
         height: 95vw;
     }
-    #qr-code img, #qr-code canvas{
+
+    #qr-code img,
+    #qr-code canvas {
         max-width: 95vw !important;
         max-height: 95vw !important;
     }
-    .btn{
+
+    .btn {
         min-width: unset;
     }
 }
 
-@media (max-width: 350px){
-    .action-container{
+@media (max-width: 350px) {
+    .action-container {
         flex-direction: column;
     }
-    .share-btn{
+
+    .share-btn {
         margin-left: 0;
         margin-top: 0.7rem;
     }

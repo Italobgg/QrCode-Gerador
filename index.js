@@ -5,12 +5,16 @@ const qrContainer = document.querySelector("#qr-code");
 const qrText = document.querySelector(".qr-text");
 const shareBtn = document.querySelector(".share-btn");
 const sizes = document.querySelector(".sizes");
+const themeToggle = document.querySelector(".theme-toggle");
+
 
 dark.addEventListener("input", handleDarkColor);
 light.addEventListener("input", handleLightColor);
 qrText.addEventListener("input", handleQRText);
 sizes.addEventListener("change", handleSize);
 shareBtn.addEventListener("click", handleShare);
+themeToggle.addEventListener("change", handleThemeToggle);
+
 
 const defaultUrl = "https://github.com/Italobgg";
 let colorLight = "#fff",
@@ -85,4 +89,21 @@ function resolveDataUrl() {
     }, 50);
   });
 }
+
+function handleThemeToggle() {
+  if (themeToggle.checked) {
+    enableLightTheme();
+  } else {
+    enableDarkTheme();
+  }
+}
+
+function enableLightTheme() {
+  document.documentElement.setAttribute("data-theme", "light");
+}
+
+function enableDarkTheme() {
+  document.documentElement.setAttribute("data-theme", "dark");
+}
+
 generateQRCode();
